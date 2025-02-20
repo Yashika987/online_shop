@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  app:
+    build: 
+      context: .
+    image: online-shop:latest
+    container_name: online-shop      
+    networks:
+      - app-network
+    ports:
+      - "3000:3000"
+
+networks:
+  app-network:
+    driver: bridge
