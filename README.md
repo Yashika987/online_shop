@@ -31,6 +31,7 @@ In this phase, your focus is on understanding the provided developer code, revie
 - [Submission Instructions](#submission-instructions)
 - [Submission Details for Your Repo README](#submission-details-for-your-repo-readme)
 - [Evaluation Criteria](#evaluation-criteria)
+- [Guide to Docker & Containerization](#guide-to-docker--containerization)
 - [License](#license)
 - [Contact](#contact)
 
@@ -176,10 +177,60 @@ Submissions will be evaluated based on the following criteria:
 - **Timeliness:**
     
     Your submission must be completed and submitted before the hackathon deadline.
-    
 
 ---
+## Guide to Docker & Containerization
+  ### Prerequisites
+    Ensure you have the following installed before proceeding:
+    * Docker
+    * Docker Compose
+    * Git
+    * Node.js and npm
 
+- **Setup and Deployment Instructions:**
+
+    #### 1. 📥 Clone the repository
+    ```bash
+    git clone -b <Repo URL>
+    ```
+
+    #### 2. 🛠️ Setting Up a Dockerfile
+    ```bash
+    vim Dockerfile
+    ```
+    #### 3. 🏗️ Manual Setup: Build & Run
+    ```bash
+    docker build -t online-shop:latest .
+    docker run -d -p 3000:3000 --name online-shop online:latest
+    ```
+    #### 4. 📦 Creating a Docker Compose File
+    ```bash
+    vim docker-compose.yaml
+    ```
+    #### 5. 🚀 Running Docker Compose in Detached Modee
+    ```bash
+    docker compose up -d
+    ```
+    #### 6. 🔍 Validate and Inspect Docker Container
+    ```bash
+    docker ps
+    docker logs <container id>
+    docker exec -it <container_id> bash
+    ```
+    #### 7. 🚨 Detect Vulnerabilities in Docker Images Using Scout
+    ![App Screenshot](/public/imgs/dockerscout.png)
+
+    #### 8. 🌍 Viewing the Application on localhost:3000
+    ![App Screenshot](/public/imgs/Application.png)
+
+    #### 9. 🔄 Commit and Push Changes to Repository
+    ```bash
+    git status 
+    git add .
+    git commit -m "<Commit message>"
+    git push
+    ```
+---
 ## License
 
 This project is licensed under the MIT License. See the [MIT](LICENSE) file for details.
