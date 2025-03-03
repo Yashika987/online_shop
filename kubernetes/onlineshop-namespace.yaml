@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: onlineshop-namespace
+  labels: 
+    name: onlineshop-namespace
+  
+

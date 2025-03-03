@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  labels: 
+    app: onlineshop-deploy
+  name: onlineshop-deploy
+  namespace: onlineshop-namespace
+spec: 
+  replicas: 2
+  selector:
+    matchLabels:
+      app: onlineshop-deploy
+  template: 
+    metadata:
+      labels: 
+        app: onlineshop-deploy
+    spec: 
+      containers: 
+      - name: onlineshop
+        image: yashikadevops123/online-shop:latest
+        ports: 
+        - containerPort: 3000
+      resources:
+        requests:
+          memory: "512Mi"
+          cpu: "250m"
+        limits:
+          memory: "1Gi"
+          cpu: "500m"
